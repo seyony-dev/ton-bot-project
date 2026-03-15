@@ -1,0 +1,6 @@
+aiogram
+ccxt
+pandas
+pandas-ta
+python-dotenv
+apscheduler
