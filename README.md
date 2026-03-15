@@ -1,61 +1,61 @@
 # TON Crypto Trading Bot
 
-An automated trading bot for Telegram that simulates trading TON (The Open Network) using RSI, EMA (50 and 200), and Bollinger Bands on Binance data.
+Автоматизированный торговый Telegram-бот, который симулирует торговлю токеном TON (The Open Network) с использованием индикаторов RSI, EMA (50 и 200) и Линий Боллинджера (Bollinger Bands) на основе данных с биржи Binance.
 
-## Features
-- **Telegram Interface**: Easy to use interface through Telegram.
-- **Virtual Balance**: Practice paper trading with a simulated balance without risking real funds. 
-- **Indicator based Analysis**: Evaluates position entry using RSI, EMA, and Bollinger Bands with multi-timeframe capability (`15m`, `1h`).
-- **Trailing Stop-Loss**: Dynamically updates stop-loss to protect profits depending on price movements.
-- **Trade History & Portfolio**: Tracks open positions, calculates current profit/loss and stores trade history.
+## Особенности
+- **Telegram Интерфейс**: Простое и удобное управление через Telegram.
+- **Виртуальный Баланс (Paper Trading)**: Тренируйтесь в торговле на виртуальном балансе без риска потери реальных средств.
+- **Анализ по Индикаторам**: Оценивает точки входа в позицию, используя RSI, EMA и Линии Боллинджера. Поддерживает анализ на разных таймфреймах (`15м`, `1ч`).
+- **Трейлинг-стоп (Trailing Stop-Loss)**: Динамически обновляет уровень стоп-лосса для фиксации и защиты прибыли при движениях рынка.
+- **История Сделок и Портфель**: Отслеживает открытые позиции, показывает текущую прибыль/убыток в реальном времени и сохраняет историю всех сделок.
 
-## Requirements
+## Требования
 - Python 3.9+
-- The dependencies listed in `requirements.txt`
+- Зависимости, перечисленные в файле `requirements.txt`
 
-## Installation & Setup
+## Установка и Настройка
 
-### For Windows Users (Automated setup)
-You can double-click `install.bat` to automatically set up the virtual environment and install all necessary dependencies.
+### Для пользователей Windows (Автоматическая установка)
+Вы можете просто дважды кликнуть по файлу `install.bat`, чтобы автоматически настроить виртуальное окружение и установить все необходимые библиотеки.
 
-Alternatively, follow these steps manually:
-1. Clone the repository.
-2. Create python virtual environment:
+Или же выполните установку вручную через терминал:
+1. Клонируйте репозиторий.
+2. Создайте виртуальное окружение:
    ```sh
    python -m venv venv
    ```
-3. Activate the virtual environment:
+3. Активируйте виртуальное окружение:
    ```sh
    venv\Scripts\activate
    ```
-4. Install dependencies:
+4. Установите зависимости:
    ```sh
    pip install -r requirements.txt
    ```
 
-### Configuration
-1. Rename `.env.example` to `.env` or just create `.env`.
-2. Add your Telegram Bot Token and other settings:
+### Конфигурация файлов
+1. Переименуйте файл `.env.example` в `.env` (или просто скопируйте и создайте новый файл `.env`).
+2. Впишите ваш токен от Telegram-бота и другие настройки:
    ```env
-   BOT_TOKEN=YOUR_BOT_TOKEN_HERE
+   BOT_TOKEN=ВАШ_ТОКЕН_БОТА_ЗДЕСЬ
    INITIAL_BALANCE=1000
    TRADE_AMOUNT=100
    ```
-   *You can get a bot token from [@BotFather](https://t.me/BotFather) on Telegram.*
+   *Вы можете создать своего бота и получить для него токен у [@BotFather](https://t.me/BotFather) в Telegram.*
 
-## Running the Bot
-Once everything is set up, you can start the bot simply by double-clicking `run.bat` (if on Windows). Or you can run it via terminal:
+## Запуск бота
+После того как всё настроено, вы можете запустить бота, нажав два раза на `run.bat` (в Windows). Также можно запустить его через терминальную консоль:
 
 ```sh
 python main.py
 ```
 
-## Usage
-In your Telegram chat with the bot, use the following commands:
-- `/start` - Initial setup and welcome message. Resets the database and virtual balance if ran again.
-- `/status` - Check your virtual portfolio balance, active trades, entry prices, and stop-loss levels.
-- `/analyze` - Display the inline keyboard to run market analysis on either `15m` or `1h` timeframe and execute trades.
-- `/history` - Display history of executed paper trades.
+## Использование
+В чате с ботом в Telegram используйте следующие команды:
+- `/start` - Приветственное сообщение и первичная настройка бота. **Внимание:** при повторном использовании команды база данных (история) и виртуальный баланс будут сброшены!
+- `/status` - Проверить текущее состояние портфеля: виртуальный баланс, данные об открытой позиции (цена покупки) и уровни стоп-лосса.
+- `/analyze` - Вызывает меню выбора таймфрейма (`15м` или `1ч`), после чего бот анализирует рынок и может автоматически совершить тестовую сделку.
+- `/history` - Посмотреть всю сохраненную историю ваших завершённых виртуальных сделок.
 
-## Disclaimer
-This project is for educational and entertainment purposes only (paper trading). It is not financial advice.
+## Дисклеймер
+Этот проект предназначен исключительно для образовательных и развлекательных целей. Проект симулирует торговлю ("paper trading") и не осуществляет сделки с реальными деньгами. Данное ПО не является инвестиционной или финансовой рекомендацией.
